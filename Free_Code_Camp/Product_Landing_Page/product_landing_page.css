@@ -70,12 +70,19 @@ section {
 
 #price-box {
   display: grid;
-  grid-template-columns: 25% 25% 25%;
+  grid-template-columns: 30% 30% 30%;
   justify-content: space-evenly;
+  margin: 0px;
+}
+
+@media (max-width: 750px) {
+  #price-box {
+    display: block;
+  }
 }
 
 .pricing-plan {
-  min-width: 200px;
+  min-width: 100px;
   background: #fff;
   padding: 0 10px;
 }
