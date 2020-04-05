@@ -1,0 +1,117 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  min-height: 75px;
+  padding: 0 20px;
+  background: #ffffff;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#logo {
+  width: 50vw;
+}
+#header-img {
+  height: 75px;
+}
+
+#nav-bar ul {
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-link {
+  list-style: none;
+  display: inline-flex;
+  justify-self: center;
+}
+
+section {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 40px 0;
+}
+
+#main {
+  width: 100%;
+
+  margin-top: 75px;
+}
+
+.gray {
+  background-color: #efefef;
+}
+
+.red {
+  background-color: #f00;
+}
+
+#plan-section {
+  display: flex;
+}
+
+#price-box {
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  justify-content: space-evenly;
+}
+
+.pricing-plan {
+  min-width: 200px;
+  background: #fff;
+  padding: 0 10px;
+}
+
+.pricing-plan h3,
+.pricing-plan h4 {
+  text-align: center;
+}
+
+.pricing-plan li {
+  margin-top: 1rem;
+}
+
+.not-offered {
+  color: #999999;
+  text-decoration-line: line-through;
+}
+
+#contact {
+  color: #fff;
+  padding: 20px 10%;
+}
+
+input {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#submit {
+  background-color: #fff;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  width: auto;
+}
+
+#submit:hover {
+  color: #fff;
+  background-color: #f00;
+}
