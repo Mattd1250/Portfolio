@@ -1,0 +1,79 @@
+body,
+input,
+button {
+  background: #efefef;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+}
+
+header {
+  background: #fff;
+  color: #000;
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+span#dynasty {
+  color: #f00;
+}
+
+form {
+  background: #ffffff;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  font-size: 1rem;
+}
+
+#name,
+#email {
+  width: 100%;
+}
+
+.form-input {
+  display: block;
+  padding: 20px;
+}
+
+#number {
+  width: 4rem;
+}
+
+#dropdown {
+  display: block;
+  width: auto;
+  margin-left: 5%;
+  font-size: 0.75rem;
+}
+.radio-input,
+.checkbox-input {
+  display: inline-block;
+  width: 100%;
+  min-height: 1.5rem;
+  margin-left: 5%;
+  font-size: 1rem;
+}
+
+.extra {
+  font-size: 1rem;
+}
+
+#additional-info {
+  width: 100%;
+}
+
+button {
+  background: #f00;
+  color: #fff;
+}
+
+button:hover {
+  background: #fff;
+  color: #ff0000;
+  border: 2px solid #f00;
+}
