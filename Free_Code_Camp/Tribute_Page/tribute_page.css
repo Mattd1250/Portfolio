@@ -1,0 +1,28 @@
+#title {
+  text-align: center;
+}
+
+#title-caption h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+img {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#img-caption p {
+  text-align: center;
+}
+
+section#tribute-info {
+  margin-left: 10%;
+}
+
+section#tribute-info h2 {
+  margin-top: 40px;
+}

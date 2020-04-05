@@ -1,0 +1,146 @@
+body {
+  background-color: #999;
+  font-family: Fantasy;
+}
+
+#header {
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  position: fixed;
+  margin-left: 0px;
+  z-index: 1;
+}
+
+#navigation {
+  width: 33%;
+}
+
+.navButton {
+  width: 32%;
+  height: 75px;
+}
+
+#about {
+  width: 100%;
+  height: 500px;
+  background-color: gray;
+  color: white;
+  padding-top: 100px;
+  display: in-line;
+}
+
+.blurb {
+  text-align: center;
+  font-size: 17px;
+  height: auto;
+  width: 25%;
+  float: left;
+  margin-left: 10%;
+  padding-top: 50px;
+}
+
+#about img {
+  height: 200px;
+  float: right;
+  margin-right: 10%;
+  padding-top: 25px;
+}
+
+#portfolio {
+  width: 100%;
+  height: auto;
+  background-color: teal;
+  padding-top: 100px;
+  padding-bottom: 75px;
+}
+
+#portRow {
+  padding-top: 50px;
+  margin: auto;
+  display: in-line;
+}
+
+.thumb1 {
+  height: 300px;
+  width: 33%;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#comingSoon {
+  width: 100%;
+  height: 100%;
+  font-size: 75px;
+  background-color: yellow;  
+  
+}
+
+#contact {
+  width: 100%;
+  height: 500px;
+  background-color: black;
+  color: white;
+  padding-top: 100px; 
+}
+
+#contactBox {
+  height: 300px;
+  width: 300px;
+  float: right;
+  margin-right: 10%;
+  color: black;
+}
+
+input {
+  height: 15%;
+  width: 100%;
+}
+
+textarea {
+  height: 40%;
+  width: 100%;
+  word-wrap: break-word; 
+  resize: none;
+}
+
+#contactBox button {
+  height: 10%;
+  float: right;
+}
+
+#thisPage {
+  height: auto;
+  width: 100%;
+  color: white;
+  padding-bottom: 50px;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+}
+
+.findMe {
+  text-align: center;
+  font-size: 17px;
+  height: 150px;
+  width: auto;
+  margin: auto;
+  padding-top: 50px;
+}
+
+#footer {
+  height: 50px;
+  width: 100%;
+  color: black;
+  background-color: white;
+  z-index: 1;
+  text-align: center;
+  font-size: 40px;
+}
