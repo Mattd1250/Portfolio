@@ -1,34 +1,22 @@
-.divide {
+* {
+  border: 2px solid white;
+}
+
+#nav-header-container {
   position: fixed;
-  height: 100%;
-  z-index: 1;
-  width: 400px;
+  display: block;
+  background: green;
   top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-  bottom: 100%;
+  z-index: 99;
+  height: 60px;
 }
 
-.left {
-  width: 400px;
-  left: 0;
-  margin-top: -20px;
-}
-
-.right {
-  width: auto;
-  left: 400px;
-  padding: 0 20px;
-}
-
-h1,
-h2 {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 2rem;
-}
-
-code {
-  font-family: "Courier New", Courier, monospace;
+#nav-header {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+  margin-top: 15px;
+  text-align: center;
 }
 
 #navbar {
@@ -39,22 +27,6 @@ code {
   width: 100%;
   border-color: #000;
   margin: 0;
-}
-
-#nav-header-container {
-  position: fixed;
-  display: block;
-  background: green;
-  height: 60px;
-  width: 400px;
-  z-index: 99;
-}
-
-#nav-header {
-  position: relative;
-  font-size: 1.5rem;
-  top: 25%;
-  left: 50px;
 }
 
 #nav-links-container {
@@ -79,6 +51,56 @@ code {
   justify-content: center;
   align-items: center;
   border-bottom: 2px solid #000;
+}
+
+.menu {
+  left: 0;
+  margin-top: -20px;
+}
+
+.content {
+  width: auto;
+  left: 400px;
+  padding: 0 20px;
+}
+
+@media (min-width: 800px) {
+  #nav-header-container {
+    background-color: blue;
+  }
+
+  .divide {
+    position: fixed;
+    height: 100%;
+    z-index: 1;
+    width: 400px;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    bottom: 100%;
+  }
+
+  .menu {
+    width: 400px;
+    left: 0;
+    margin-top: -20px;
+  }
+
+  .content {
+    width: auto;
+    left: 400px;
+    padding: 0 20px;
+  }
+}
+
+h1,
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
 }
 
 #main-doc {
