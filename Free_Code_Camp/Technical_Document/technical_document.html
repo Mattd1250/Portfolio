@@ -3,28 +3,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./technical_document.css" />
     <title>Technical Document</title>
   </head>
   <body>
-    <nav id="navbar">
-      <header>My Personal Google Searches</header>
-      <a href="#what_i_have_googled" class="nav-link"
-        >Things I Have Googled While Learning</a
-      >
-      <a href="#Close_Git_Commit_Editor" class="nav-link"
-        >Close Git Commit Editor<</a
-      >
-      <a href="#Offsetting_An_HTML_Anchor" class="nav-link"
-        >Offsetting An HTML Anchor</a
-      >
-      <a href="#Move_Line_in_Visual_Studio_Code" class="nav-link"
-        >Move Line in Visual Studio Code</a
-      >
-      <a href="#Center_Vertically_Horizontally_Using_Flexbox" class="nav-link"
-        >Center Vertically & Horizontally - Using Flexbox<</a
-      >
+    <nav id="navbar" class="divide left">
+      <div>
+        <header id="nav-header">My Personal Google Searches</header>
+      </div>
+      <hr />
+      <ul>
+        <li>
+          <a href="#what_i_have_googled" class="nav-link"
+            >Things I Have Googled While Learning</a
+          >
+        </li>
+        <li>
+          <a href="#Close_Git_Commit_Editor" class="nav-link"
+            >Close Git Commit Editor</a
+          >
+        </li>
+        <li>
+          <a href="#Offsetting_An_HTML_Anchor" class="nav-link"
+            >Offsetting An HTML Anchor</a
+          >
+        </li>
+        <li>
+          <a href="#Move_Line_in_Visual_Studio_Code" class="nav-link"
+            >Move Line in Visual Studio Code</a
+          >
+        </li>
+        <li>
+          <a
+            href="#Center_Vertically_Horizontally_Using_Flexbox"
+            class="nav-link"
+            >Center Vertically & Horizontally</a
+          >
+        </li>
+      </ul>
     </nav>
-    <main id="main-doc">
+    <main id="main-doc" class="divide right">
       <section class="main-section">
         <header class="what_i_have_googled">
           <h1>Things I Have Googled While Learning</h1>
@@ -43,6 +61,7 @@
           provide an explanation if needed.
         </p>
       </section>
+      <hr />
       <section class="main-section">
         <header id="Close_Git_Commit_Editor">
           <h2>Close Git Commit Editor</h2>
@@ -71,6 +90,7 @@
           <li>Solution: (ctrl x) then (ctrl c)</li>
         </ul>
       </section>
+      <hr />
       <section class="main-section">
         <header id="Offsetting_An_HTML_Anchor">
           <h2>Offsetting An HTML Anchor</h2>
@@ -142,6 +162,7 @@
           </li>
         </ul>
       </section>
+      <hr />
       <section class="main-section">
         <header id="Move_Line_in_Visual_Studio_Code">
           <h2>Move Line in Visual Studio Code</h2>
@@ -171,6 +192,7 @@
           </p>
         </ul>
       </section>
+      <hr />
       <section class="main-section">
         <header id="Center_Vertically_Horizontally_Using_Flexbox">
           <h2>Center Vertically & Horizontally - Using Flexbox</h2>
@@ -250,4 +272,29 @@
       </section>
     </main>
   </body>
+  <!--
+      search term: how to create two scrolling windows in html
+      title: How To Create A Split Screen
+      site: https://www.w3schools.com/howto/howto_css_split_screen.asp
+      Suggested
+      .split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: red;
+}
+  -->
 </html>
