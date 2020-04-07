@@ -8,43 +8,45 @@
   </head>
   <body>
     <nav id="navbar" class="divide left">
-      <div>
+      <div id="nav-header-container">
         <header id="nav-header">My Personal Google Searches</header>
       </div>
-      <hr />
-      <ul>
-        <li>
-          <a href="#what_i_have_googled" class="nav-link"
-            >Things I Have Googled While Learning</a
-          >
-        </li>
-        <li>
-          <a href="#Close_Git_Commit_Editor" class="nav-link"
-            >Close Git Commit Editor</a
-          >
-        </li>
-        <li>
-          <a href="#Offsetting_An_HTML_Anchor" class="nav-link"
-            >Offsetting An HTML Anchor</a
-          >
-        </li>
-        <li>
-          <a href="#Move_Line_in_Visual_Studio_Code" class="nav-link"
-            >Move Line in Visual Studio Code</a
-          >
-        </li>
-        <li>
-          <a
-            href="#Center_Vertically_Horizontally_Using_Flexbox"
-            class="nav-link"
-            >Center Vertically & Horizontally</a
-          >
-        </li>
-      </ul>
+      <div id="nav-links-container">
+        <hr />
+        <ul>
+          <li>
+            <a href="#what_i_have_googled" class="nav-link"
+              >Things I Have Googled While Learning</a
+            >
+          </li>
+          <li>
+            <a href="#Close_Git_Commit_Editor" class="nav-link"
+              >Close Git Commit Editor</a
+            >
+          </li>
+          <li>
+            <a href="#Offsetting_An_HTML_Anchor" class="nav-link"
+              >Offsetting An HTML Anchor</a
+            >
+          </li>
+          <li>
+            <a href="#Move_Line_in_Visual_Studio_Code" class="nav-link"
+              >Move Line in Visual Studio Code</a
+            >
+          </li>
+          <li>
+            <a
+              href="#Center_Vertically_Horizontally_Using_Flexbox"
+              class="nav-link"
+              >Center Vertically & Horizontally</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
     <main id="main-doc" class="divide right">
       <section class="main-section">
-        <header class="what_i_have_googled">
+        <header id="what_i_have_googled" class="anchor">
           <h1>Things I Have Googled While Learning</h1>
         </header>
         <p>
@@ -61,9 +63,9 @@
           provide an explanation if needed.
         </p>
       </section>
-      <hr />
+
       <section class="main-section">
-        <header id="Close_Git_Commit_Editor">
+        <header id="Close_Git_Commit_Editor" class="anchor">
           <h2>Close Git Commit Editor</h2>
         </header>
         <p>
@@ -73,26 +75,29 @@
           ">" and a cursor. After keyboard mashing, I decided to look it up.
           Below is an example of my code and the error.
         </p>
-        <code id="git_commit">
-          git commit -m 'Add some file to project" <br />
+        <p class="code_snippet">
+          <code> git commit -m 'Add some file to project" </code><br /><code
+            >></code
           >
-        </code>
+        </p>
         <h3>Solution</h3>
         <ul>
-          <li>Search: "how to get out of commit message git"</li>
           <li>
-            Site:
+            <strong>Search</strong>: "how to get out of commit message git"
+          </li>
+          <li>
+            <strong>Site</strong>:
             <a
               href="https://stackoverflow.com/questions/13239368/git-how-to-close-commit-editor"
               >stackoverflow.com</a
             >
           </li>
-          <li>Solution: (ctrl x) then (ctrl c)</li>
+          <li><strong>Shortcut</strong>: (ctrl x) then (ctrl c)</li>
         </ul>
       </section>
-      <hr />
+
       <section class="main-section">
-        <header id="Offsetting_An_HTML_Anchor">
+        <header id="Offsetting_An_HTML_Anchor" class="anchor">
           <h2>Offsetting An HTML Anchor</h2>
         </header>
         <p>
@@ -103,9 +108,9 @@
         </p>
         <h3>Solution</h3>
         <ul>
-          <li>Search: "html anchor not top of section"</li>
+          <li><strong>Search</strong>: "html anchor not top of section"</li>
           <li>
-            Site:
+            <strong>Site</strong>:
             <a
               href="https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header"
               >stackoverflow.com</a
@@ -121,33 +126,41 @@
         <div class="suggested_used">
           <div class="code_example">
             <h4>Suggested</h4>
-            <code>
-              .thing-with-anchor:before {
-              <li>content: '';</li>
-              <li>display: block;</li>
-              <li>position: relative;</li>
-              <li>width: 0;</li>
-              <li>height: 5em;</li>
-              <li>margin-top: -5em</li>
-              <li>}</li></code
-            >
+            <div class="code_paragraph">
+              <code> .thing-with-anchor:before {</code>
+              <ul>
+                <li><code>content: '';</code></li>
+                <li><code>display: block;</code></li>
+                <li><code>position: relative;</code></li>
+                <li><code>width: 0;</code></li>
+                <li><code>height: 5em;</code></li>
+                <li><code>margin-top: -5em</code></li>
+                <li><code>}</code></li>
+              </ul>
+            </div>
           </div>
           <div class="code_example">
             <h4>Used</h4>
-            <code>
-              .nav-link:before {
-              <li>content: '';</li>
-              <li>display: block;</li>
-              <li>height: 75px;</li>
-              <li>margin-top: -75px</li>
-              <li>}</li> </code
-            >.
+            <div class="code_paragraph">
+              <code> .anchor:before {</code>
+              <ul>
+                <li><code>content: '';</code></li>
+                <li><code>display: block;</code></li>
+                <li><code>height: 75px;</code></li>
+                <li><code>margin-top: -75px</code></li>
+                <li><code>}</code></li>
+              </ul>
+            </div>
           </div>
         </div>
         <h3>Breakdown why this works</h3>
         <ul>
+          <li>
+            .anchor - It is important to place this class on the element that
+            will be called by the link
+          </li>
           <li>:before - This inserts content before the selected element</li>
-          <li>content: ''; - There needs to be content to occupy space</li>
+          <li>content: ""; - There needs to be content to occupy space</li>
           <li>
             display: block; - This makes the content, inserted by the "before:",
             push all other sections to a new row.
@@ -162,9 +175,9 @@
           </li>
         </ul>
       </section>
-      <hr />
+
       <section class="main-section">
-        <header id="Move_Line_in_Visual_Studio_Code">
+        <header id="Move_Line_in_Visual_Studio_Code" class="anchor">
           <h2>Move Line in Visual Studio Code</h2>
         </header>
         <p>
@@ -175,26 +188,30 @@
         </p>
         <h3>Solution</h3>
         <ul>
-          <li>Search: "visual studio code shortcut to move line"</li>
           <li>
-            Site:
+            <strong>Search</strong>: "visual studio code shortcut to move line"
+          </li>
+          <li>
+            <strong>Site</strong>:
             <a
               href="https://code.visualstudio.com/docs/getstarted/keybindings#_basic-editing"
               >code.visualstudio.com</a
             >
           </li>
-          <li>Solution: option + up/down arrow</li>
-          <p>
-            the site that is referenced above is from Visual Studio Code. There
-            is an anchor tag on it that links to the part of the page with many
-            basic editing shortcuts. Will need to reference this to make editing
-            faster.
-          </p>
+          <li><strong>Shortcut</strong>: option + up/down arrow</li>
         </ul>
+        <p>
+          The site that is referenced above is from Visual Studio Code. There is
+          an anchor tag on it that links to the part of the page with many basic
+          editing shortcuts. Will need to reference this to make editing faster.
+        </p>
       </section>
-      <hr />
+
       <section class="main-section">
-        <header id="Center_Vertically_Horizontally_Using_Flexbox">
+        <header
+          id="Center_Vertically_Horizontally_Using_Flexbox"
+          class="anchor"
+        >
           <h2>Center Vertically & Horizontally - Using Flexbox</h2>
         </header>
         <p>
@@ -204,9 +221,9 @@
         </p>
         <h3>Solution</h3>
         <ul>
-          <li>Search: "css image center in div"</li>
+          <li><strong>Search</strong>: "css image center in div"</li>
           <li>
-            Site:
+            <strong>Site</strong>:
             <a href="https://www.w3schools.com/css/css_align.asp"
               >W3schools.com</a
             >
@@ -220,62 +237,66 @@
         <div class="suggested_used">
           <div class="code_example">
             <h4>Suggested</h4>
-            <code>
-              .center {
+            <div class="code_paragraph">
+              <code>.center {</code>
               <ul>
-                <li>display: flex;</li>
-                <li>justify-content: center;</li>
-                <li>align-items: center;</li>
-                <li>height: 200px;</li>
-                <li>border: 3px solid green;</li>
+                <li><code>display: flex;</code></li>
+                <li><code>justify-content: center;</code></li>
+                <li><code>align-items: center;</code></li>
+                <li><code>height: 200px;</code></li>
+                <li><code>border: 3px solid green;</code></li>
+                <li><code>}</code></li>
               </ul>
-            </code>
+            </div>
           </div>
-          <div class="code_example"></div>
-          <h4>Used</h4>
-          <code>
-            .center {
-            <ul>
-              <li>display: flex;</li>
-              <li>justify-content: center;</li>
-              <li>align-items: center;</li>
-              <li>height: 400px;</li>
-              <li>padding-bottom: 75px;</li>
-            </ul>
-          </code>
-          <p>
-            I ended up using close to the same code as the example with a few
-            changes. Since I was using a nav-bar that was fixed and 75px high, I
-            needed to add padding at the bottom.
-          </p>
-          <h3>Breakdown why this works</h3>
-          <ul>
-            <li>display: flex; - created a flexbox for the element</li>
-            <li>
-              justify-content: center; - This places the content in the center
-              horizontally
-            </li>
-            <li>
-              align-items: center; - This places the content in the center
-              vertically.
-            </li>
-            <li>
-              height: 400px: - This sets the size of the div and since the
-              iframe I used was 315px it sat nicely in the middle
-            </li>
-            <li>
-              margin-bottom: 75px: - This was used to compensate for the nav-bar
-              offset.
-            </li>
-          </ul>
+          <div class="code_example">
+            <h4>Used</h4>
+            <div class="code_paragraph">
+              <code>.center {</code>
+              <ul>
+                <li><code>display: flex;</code></li>
+                <li><code>justify-content: center;</code></li>
+                <li><code>align-items: center;</code></li>
+                <li><code>height: 400px;</code></li>
+                <li><code>padding-bottom: 75px;</code></li>
+                <li><code>}</code></li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <p>
+          I ended up using close to the same code as the example with a few
+          changes. Since I was using a nav-bar that was fixed and 75px high, I
+          needed to add padding at the bottom.
+        </p>
+        <h3>Breakdown why this works</h3>
+        <ul>
+          <li>display: flex; - created a flexbox for the element</li>
+          <li>
+            justify-content: center; - This places the content in the center
+            horizontally
+          </li>
+          <li>
+            align-items: center; - This places the content in the center
+            vertically.
+          </li>
+          <li>
+            height: 400px: - This sets the size of the div and since the iframe
+            I used was 315px it sat nicely in the middle
+          </li>
+          <li>
+            margin-bottom: 75px: - This was used to compensate for the nav-bar
+            offset.
+          </li>
+        </ul>
       </section>
+      <footer></footer>
     </main>
   </body>
   <!--
-      search term: how to create two scrolling windows in html
+      <strong>Search</strong> term: how to create two scrolling windows in html
       title: How To Create A Split Screen
-      site: https://www.w3schools.com/howto/howto_css_split_screen.asp
+      <strong>Site</strong>: https://www.w3schools.com/howto/howto_css_split_screen.asp
       Suggested
       .split {
   height: 100%;
@@ -296,5 +317,14 @@
   right: 0;
   background-color: red;
 }
+
+
+---------------------------
+change color of hr html
+Boilerplate : hr { display: block; height: 1px;
+    border: 0; border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; }
+<strong>Site</strong>: Stackoverflow - https://stackoverflow.com/questions/6382023/changing-the-color-of-an-hr-element
+title: Changing the color of an hr element
   -->
 </html>

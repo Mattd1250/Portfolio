@@ -6,17 +6,29 @@
   top: 0;
   overflow-x: hidden;
   padding-top: 20px;
+  bottom: 100%;
 }
 
 .left {
   width: 400px;
   left: 0;
+  margin-top: -20px;
 }
 
 .right {
   width: auto;
   left: 400px;
-  padding-left: 20px;
+  padding: 0 20px;
+}
+
+h1,
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
 }
 
 #navbar {
@@ -29,13 +41,24 @@
   margin: 0;
 }
 
+#nav-header-container {
+  position: fixed;
+  display: block;
+  background: green;
+  height: 60px;
+  width: 400px;
+  z-index: 99;
+}
+
 #nav-header {
-  display: flex;
-  min-height: 40px;
+  position: relative;
   font-size: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 20px;
+  top: 25%;
+  left: 50px;
+}
+
+#nav-links-container {
+  padding-top: 60px;
 }
 
 #navbar ul {
@@ -62,7 +85,55 @@
   background: yellow;
 }
 
-hr {
-  width: 50%;
-  padding-right: 20px;
+p {
+  margin-left: 20px;
+}
+
+.anchor:before {
+  content: "";
+  display: block;
+  height: 20px;
+  margin-top: -20px;
+}
+
+.suggested_used {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.code_snippet {
+  margin: 20px;
+  width: 400px;
+  background-color: #efefef;
+  border: 2px solid #000;
+  padding: 10px;
+}
+
+.code_paragraph {
+  margin: 20px;
+  font-size: 0.75rem;
+  background-color: #efefef;
+  border: 2px solid #000;
+  padding: 5px;
+  width: auto;
+}
+
+.code_paragraph ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.code_paragraph ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.code_example h4 {
+  text-align: center;
+}
+
+footer {
+  content: "";
+  display: block;
+  padding-bottom: 80px;
+  margin-bottom: -80px;
 }
