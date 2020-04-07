@@ -1,0 +1,253 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Technical Document</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>My Personal Google Searches</header>
+      <a href="#what_i_have_googled" class="nav-link"
+        >Things I Have Googled While Learning</a
+      >
+      <a href="#Close_Git_Commit_Editor" class="nav-link"
+        >Close Git Commit Editor<</a
+      >
+      <a href="#Offsetting_An_HTML_Anchor" class="nav-link"
+        >Offsetting An HTML Anchor</a
+      >
+      <a href="#Move_Line_in_Visual_Studio_Code" class="nav-link"
+        >Move Line in Visual Studio Code</a
+      >
+      <a href="#Center_Vertically_Horizontally_Using_Flexbox" class="nav-link"
+        >Center Vertically & Horizontally - Using Flexbox<</a
+      >
+    </nav>
+    <main id="main-doc">
+      <section class="main-section">
+        <header class="what_i_have_googled">
+          <h1>Things I Have Googled While Learning</h1>
+        </header>
+        <p>
+          This document is all about what I have Googled while learning code.
+          This is a living document that will be consistently added to as I go.
+          While Google is a great resource for me, I find myself searching for
+          the same topic more than once. This takes time out of my coding
+          because I am searching for the main document I found the first time.
+        </p>
+        <p>
+          By creating this document, I will put all of my searches in one place
+          with answers to my questions. I will first explain why I needed help.
+          Then show the query, give the site, and give the solution. I will
+          provide an explanation if needed.
+        </p>
+      </section>
+      <section class="main-section">
+        <header id="Close_Git_Commit_Editor">
+          <h2>Close Git Commit Editor</h2>
+        </header>
+        <p>
+          While using Git, I accidentally used a single apostrophe (') to start
+          and a double apostrophe ("). This created an error on my terminal, and
+          I was not able to exit out of it. There was no error message just a
+          ">" and a cursor. After keyboard mashing, I decided to look it up.
+          Below is an example of my code and the error.
+        </p>
+        <code id="git_commit">
+          git commit -m 'Add some file to project" <br />
+          >
+        </code>
+        <h3>Solution</h3>
+        <ul>
+          <li>Search: "how to get out of commit message git"</li>
+          <li>
+            Site:
+            <a
+              href="https://stackoverflow.com/questions/13239368/git-how-to-close-commit-editor"
+              >stackoverflow.com</a
+            >
+          </li>
+          <li>Solution: (ctrl x) then (ctrl c)</li>
+        </ul>
+      </section>
+      <section class="main-section">
+        <header id="Offsetting_An_HTML_Anchor">
+          <h2>Offsetting An HTML Anchor</h2>
+        </header>
+        <p>
+          I found that when I clicked on an anchor link, the page would scroll
+          to the wrong part of the section. The top of the section would be cut
+          off by the navbar. This was not a good user experience since the user
+          would need to scroll up to see the titles.
+        </p>
+        <h3>Solution</h3>
+        <ul>
+          <li>Search: "html anchor not top of section"</li>
+          <li>
+            Site:
+            <a
+              href="https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header"
+              >stackoverflow.com</a
+            >
+          </li>
+        </ul>
+        <p>
+          While I found the answer on the above link, it didn't work correctly
+          for me. I did however, find the code in the comments worked better but
+          was not perfect. Below is the the suggested code and the code I
+          actually used:
+        </p>
+        <div class="suggested_used">
+          <div class="code_example">
+            <h4>Suggested</h4>
+            <code>
+              .thing-with-anchor:before {
+              <li>content: '';</li>
+              <li>display: block;</li>
+              <li>position: relative;</li>
+              <li>width: 0;</li>
+              <li>height: 5em;</li>
+              <li>margin-top: -5em</li>
+              <li>}</li></code
+            >
+          </div>
+          <div class="code_example">
+            <h4>Used</h4>
+            <code>
+              .nav-link:before {
+              <li>content: '';</li>
+              <li>display: block;</li>
+              <li>height: 75px;</li>
+              <li>margin-top: -75px</li>
+              <li>}</li> </code
+            >.
+          </div>
+        </div>
+        <h3>Breakdown why this works</h3>
+        <ul>
+          <li>:before - This inserts content before the selected element</li>
+          <li>content: ''; - There needs to be content to occupy space</li>
+          <li>
+            display: block; - This makes the content, inserted by the "before:",
+            push all other sections to a new row.
+          </li>
+          <li>
+            height: 75px: - This is the size of the navbar that is fixed to the
+            top.
+          </li>
+          <li>
+            margin-top: -75px: - Without this in the css, this creates even more
+            space in between the sections.
+          </li>
+        </ul>
+      </section>
+      <section class="main-section">
+        <header id="Move_Line_in_Visual_Studio_Code">
+          <h2>Move Line in Visual Studio Code</h2>
+        </header>
+        <p>
+          I am using a Mac and using Visual Studio Code. I was making a list of
+          bullet points and realized that I wanted to change the order of the
+          list. I could have gone with the cut and paste route but I knew there
+          was a shortcut.
+        </p>
+        <h3>Solution</h3>
+        <ul>
+          <li>Search: "visual studio code shortcut to move line"</li>
+          <li>
+            Site:
+            <a
+              href="https://code.visualstudio.com/docs/getstarted/keybindings#_basic-editing"
+              >code.visualstudio.com</a
+            >
+          </li>
+          <li>Solution: option + up/down arrow</li>
+          <p>
+            the site that is referenced above is from Visual Studio Code. There
+            is an anchor tag on it that links to the part of the page with many
+            basic editing shortcuts. Will need to reference this to make editing
+            faster.
+          </p>
+        </ul>
+      </section>
+      <section class="main-section">
+        <header id="Center_Vertically_Horizontally_Using_Flexbox">
+          <h2>Center Vertically & Horizontally - Using Flexbox</h2>
+        </header>
+        <p>
+          I had a section of text that I wanted to be center both horizontally
+          and vertically in a div using css. I found a that the flexbox was the
+          best way of doing this.
+        </p>
+        <h3>Solution</h3>
+        <ul>
+          <li>Search: "css image center in div"</li>
+          <li>
+            Site:
+            <a href="https://www.w3schools.com/css/css_align.asp"
+              >W3schools.com</a
+            >
+          </li>
+        </ul>
+        <p>
+          I found the answer on W3schools.com. By using the flexbox, we get more
+          options to align elements using css. While their example worked, I
+          changed it around to work for my specificy example.
+        </p>
+        <div class="suggested_used">
+          <div class="code_example">
+            <h4>Suggested</h4>
+            <code>
+              .center {
+              <ul>
+                <li>display: flex;</li>
+                <li>justify-content: center;</li>
+                <li>align-items: center;</li>
+                <li>height: 200px;</li>
+                <li>border: 3px solid green;</li>
+              </ul>
+            </code>
+          </div>
+          <div class="code_example"></div>
+          <h4>Used</h4>
+          <code>
+            .center {
+            <ul>
+              <li>display: flex;</li>
+              <li>justify-content: center;</li>
+              <li>align-items: center;</li>
+              <li>height: 400px;</li>
+              <li>padding-bottom: 75px;</li>
+            </ul>
+          </code>
+          <p>
+            I ended up using close to the same code as the example with a few
+            changes. Since I was using a nav-bar that was fixed and 75px high, I
+            needed to add padding at the bottom.
+          </p>
+          <h3>Breakdown why this works</h3>
+          <ul>
+            <li>display: flex; - created a flexbox for the element</li>
+            <li>
+              justify-content: center; - This places the content in the center
+              horizontally
+            </li>
+            <li>
+              align-items: center; - This places the content in the center
+              vertically.
+            </li>
+            <li>
+              height: 400px: - This sets the size of the div and since the
+              iframe I used was 315px it sat nicely in the middle
+            </li>
+            <li>
+              margin-bottom: 75px: - This was used to compensate for the nav-bar
+              offset.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
