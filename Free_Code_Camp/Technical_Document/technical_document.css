@@ -66,7 +66,9 @@
 
 @media (min-width: 800px) {
   #nav-header-container {
+    width: 400px;
     background-color: blue;
+    padding-left: 50px;
   }
 
   .divide {
@@ -81,8 +83,6 @@
   }
 
   .menu {
-    width: 400px;
-    left: 0;
     margin-top: -20px;
   }
 
