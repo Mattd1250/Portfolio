@@ -66,9 +66,56 @@
 
 @media (min-width: 800px) {
   #nav-header-container {
+    position: fixed;
+    display: block;
+    background: green;
+    top: 0;
+    z-index: 99;
+    height: 60px;
     width: 400px;
-    background-color: blue;
     padding-left: 50px;
+  }
+
+  #nav-header {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  #navbar {
+    background: orangered;
+  }
+
+  #navbar hr {
+    width: 100%;
+    border-color: #000;
+    margin: 0;
+  }
+
+  #nav-links-container {
+    padding-top: 60px;
+  }
+
+  #navbar ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #navbar a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .nav-link {
+    display: flex;
+    min-height: 50px;
+    font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #000;
   }
 
   .divide {
