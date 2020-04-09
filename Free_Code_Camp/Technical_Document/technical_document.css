@@ -8,7 +8,7 @@
   position: fixed;
   display: inline block;
   font-size: 24px;
-  background-color: green;
+  background-color: #c2c2c2;
   top: 0;
   left: 0;
   height: 50px;
@@ -36,10 +36,14 @@
 }
 
 #navbar {
-  background: orangered;
+  background: #efefef;
   margin-top: 25px;
   height: 200px;
   overflow: scroll;
+}
+
+.content {
+  margin: 0 20px;
 }
 /* Not touched */
 
@@ -47,7 +51,6 @@
   #nav-header-container {
     position: fixed;
     display: block;
-    background: green;
     top: 0;
     z-index: 99;
     height: 60px;
@@ -60,11 +63,11 @@
     font-size: 24px;
     margin-top: 0px;
     padding-left: 50px;
-    width: 400px;
+    width: 350px;
+    overflow: hidden;
   }
 
   #navbar {
-    background: orangered;
     margin-top: -20px;
     height: 100%;
     overflow: scroll;
@@ -166,7 +169,6 @@ code {
 }
 
 #main-doc {
-  background: yellow;
 }
 
 p {
