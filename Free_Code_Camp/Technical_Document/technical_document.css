@@ -1,68 +1,47 @@
 * {
-  border: 2px solid white;
 }
 
 #nav-header-container {
-  position: fixed;
-  display: block;
-  background: green;
-  top: 0;
-  z-index: 99;
-  height: 60px;
 }
 
 #nav-header {
-  position: relative;
-  display: inline-block;
+  position: fixed;
+  display: inline block;
   font-size: 24px;
-  margin-top: 15px;
-  text-align: center;
+  background-color: green;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 800px;
+  padding-top: 10px;
+  padding-left: 20px;
+  border: 0.1px solid white;
+}
+
+#nav-button {
+  font-size: 16px;
+  margin-left: 15px;
+  padding: 5px;
+  background: #000;
+  color: #fff;
+  border: 2px solid #000;
+}
+
+#nav-button:hover {
+  background: #fff;
+  color: #000;
+}
+#nav-links-container {
+  padding-top: 35px;
 }
 
 #navbar {
   background: orangered;
+  margin-top: 25px;
+  height: 200px;
+  overflow: scroll;
 }
-
-#navbar hr {
-  width: 100%;
-  border-color: #000;
-  margin: 0;
-}
-
-#nav-links-container {
-  padding-top: 60px;
-}
-
-#navbar ul {
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-#navbar a {
-  text-decoration: none;
-  color: #000;
-}
-
-.nav-link {
-  display: flex;
-  min-height: 50px;
-  font-size: 1.25rem;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 2px solid #000;
-}
-
-.menu {
-  left: 0;
-  margin-top: -20px;
-}
-
-.content {
-  width: auto;
-  left: 400px;
-  padding: 0 20px;
-}
+/* Not touched */
 
 @media (min-width: 800px) {
   #nav-header-container {
@@ -72,20 +51,27 @@
     top: 0;
     z-index: 99;
     height: 60px;
-    width: 400px;
-    padding-left: 50px;
+    padding-left: 0px;
   }
 
   #nav-header {
     position: relative;
     display: inline-block;
     font-size: 24px;
-    margin-top: 15px;
-    text-align: center;
+    margin-top: 0px;
+    padding-left: 50px;
+    width: 400px;
   }
 
   #navbar {
     background: orangered;
+    margin-top: -20px;
+    height: 100%;
+    overflow: scroll;
+  }
+
+  #nav-button {
+    display: none;
   }
 
   #navbar hr {
@@ -138,6 +124,35 @@
     left: 400px;
     padding: 0 20px;
   }
+  #nav-button {
+    display: hidden;
+  }
+}
+
+#navbar hr {
+  width: 100%;
+  border-color: #000;
+  margin: 0;
+}
+
+#navbar ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-link {
+  display: flex;
+  min-height: 50px;
+  font-size: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #000;
 }
 
 h1,
@@ -161,8 +176,9 @@ p {
 .anchor:before {
   content: "";
   display: block;
-  height: 20px;
-  margin-top: -20px;
+  position: relative;
+  height: 40px;
+  margin-top: -40px;
 }
 
 .suggested_used {
