@@ -18,6 +18,9 @@
         return i;
       }
 
+      checkScope();
+
+      // This will not produce the results we are looking for.
       ("use strict");
       var printNumTwo;
       for (var i = 0; i < 7; i++) {
@@ -28,9 +31,9 @@
         }
       }
       console.log(printNumTwo());
-      // returns 2
+      // returns 7
       console.log(i);
-      // returns "i is not defined"
+      // returns 7
     </script>
   </body>
 </html>
