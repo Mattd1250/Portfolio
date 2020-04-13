@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkScope() {
+        "use strict";
+        let i = "function scope";
+        if (true) {
+          let i = "block scope";
+          console.log("Block scope i is: ", i);
+        }
+        console.log("Function scope i is: ", i);
+        return i;
+      }
+
+      ("use strict");
+      var printNumTwo;
+      for (var i = 0; i < 7; i++) {
+        if (i === 2) {
+          printNumTwo = function() {
+            return i;
+          };
+        }
+      }
+      console.log(printNumTwo());
+      // returns 2
+      console.log(i);
+      // returns "i is not defined"
+    </script>
+  </body>
+</html>
