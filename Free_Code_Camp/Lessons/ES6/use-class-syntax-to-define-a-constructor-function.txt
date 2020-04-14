@@ -1,0 +1,14 @@
+/* ES5
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+*/
+
+class Vegetable {
+  constructor (name){
+    this.name = name}
+}
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
