@@ -7,13 +7,17 @@
   </head>
   <body>
     <script>
-            function findElement(arr, func) {
-        let num;
-        if ()
-        return num;
+      function chunkArrayInGroups(arr, size) {
+        let newArray = [];
+        let numArray = arr.length / size;
+        for (let i = 0; i < numArray; i++) {
+          newArray[i] = arr.splice(0, size);
+        }
+        console.log(newArray);
+        console.log(arr);
       }
 
-      findElement([1, 2, 3, 4], num => num % 2 === 0);
+      chunkArrayInGroups(["a", "b", "c", "d", "e", "f"], 2);
     </script>
   </body>
 </html>

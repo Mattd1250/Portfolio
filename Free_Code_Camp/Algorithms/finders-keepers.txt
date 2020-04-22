@@ -1,0 +1,9 @@
+function findElement(arr, func) {
+  let numPasses;
+  let i = 0;
+  while (numPasses === undefined && i < arr.length) {
+    func(arr[i]) ? (numPasses = arr[i]) : i++;
+        }
+  return(numPasses);
+}
+findElement([1, 2, 3, 4], num => num % 2 === 0);

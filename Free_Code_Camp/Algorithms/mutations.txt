@@ -1,0 +1,10 @@
+function mutation(arr) {
+  let matches = true;
+  let words = arr[0].toLowerCase();
+  let letters = arr[1].toLowerCase().split("");
+        
+  letters.filter(letter => words.indexOf(letter) < 0 && (matches = false));
+  return(matches);
+      }
+
+mutation(["hello", "hey"]);
