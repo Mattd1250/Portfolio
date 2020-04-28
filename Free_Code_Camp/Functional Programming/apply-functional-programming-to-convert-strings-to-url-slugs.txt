@@ -1,0 +1,12 @@
+// The global variable
+var globalTitle = "Winter Is Coming";
+
+// Only change code below this line
+function urlSlug(title) {
+return title.toLowerCase()
+.split(/[\W]+/g)
+.filter(word => word !== "")
+.join('-');
+
+}
+// Only change code above this line
