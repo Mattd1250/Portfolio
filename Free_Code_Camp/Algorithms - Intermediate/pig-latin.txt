@@ -1,17 +1,8 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      function translatePigLatin(str) {
+function translatePigLatin(str) {
         let pigLatin = [...str];
         const regex = /[^aeiou]+/i;
         let ending = "ay";
-        if (str.match(regex)[0] === str) {
+          if (str.match(regex)[0] === str) {
           pigLatin.push(ending);
         } else if (!regex.test(pigLatin[0])) {
           pigLatin.push("w", ending);
@@ -24,10 +15,6 @@
         } else {
           pigLatin.push("w", ending);
         }
-        console.log(pigLatin.join(""));
+        return(pigLatin.join(""));
       }
-
-      translatePigLatin("algorithm");
-    </script>
-  </body>
-</html>
+translatePigLatin("consonant");
