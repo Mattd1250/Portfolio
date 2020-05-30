@@ -7,27 +7,81 @@
   </head>
   <body>
     <script>
-      function translatePigLatin(str) {
-        let pigLatin = [...str];
-        const regex = /[^aeiou]+/i;
-        let ending = "ay";
-        if (str.match(regex)[0] === str) {
-          pigLatin.push(ending);
-        } else if (!regex.test(pigLatin[0])) {
-          pigLatin.push("w", ending);
-        } else if (str.match(regex)[0] !== str) {
-          while (regex.test(pigLatin[0])) {
-            pigLatin.push(pigLatin[0]);
-            pigLatin.shift();
-          }
-          pigLatin.push(ending);
-        } else {
-          pigLatin.push("w", ending);
-        }
-        console.log(pigLatin.join(""));
+      function convertToRoman(num) {
+        const romanNums = {
+          1: "I",
+          51: "V",
+          2: "X",
+          52: "L",
+          3: "C",
+          53: "D",
+          4: "M",
+        };
+        return romanNums[0];
+        // 1: "I",
+        // 2: "II",
+        // 3: "III",
+        // 4: "IV",
+        // 5: "V",
+        // 6: "VI",
+        // 7: "VII",
+        // 8: "VIII",
+        // 9: "IX",
+        // 10: "X",
+        // 50: "L",
+        // 100: "C",
+        // 500: "D",
+        // 1000: "M",
+        // };
+        // const valueAdder = {}
+
+        // const valueAdder = (letter, nextLetter, followingLetter, times) => {
+        //   console.log("letter", letter);
+        //   console.log("nextLetter", nextLetter);
+        //   console.log("followingLetter", followingLetter);
+        //   console.log("times", times);
+        //   if (times === 9) {
+        //     return romanStr.push(`${letter}${followingLetter}`);
+        //   } else if (times > 5 && times <= 8) {
+        //     console.log("%cValueAdder Starts", "background-color: yellow;");
+        //     romanStr.push(nextLetter);
+        //     console.log("romanStr", romanStr);
+        //     times -= 5;
+        //   }
+        //   for (let i = 0; i < times; i++) {
+        //     romanStr.push(letter);
+        //   }
+        // };
+
+        // let roman = num.toString().split("");
+        // console.log(roman);
+        // let romanLen = romanLen.length;
+        // let romanStr = [];
+        // let ones = roman[0];
+        // let tens = roman[1];
+        // let hundreds = roman[2];
+        // let thousands = roman[3];
+        // // let tens = Math.floor(roman / 10);
+        // // let hundreds = Math.floor(roman / 100);
+        // // let thousands = Math.floor(roman / 1000);
+        // if (thousands > 0) {
+        //   console.log("thousands", thousands);
+        //   valueAdder("M", "L", "C", thousands);
+        // }
+        // if (hundreds > 0) {
+        //   console.log("hundreds", hundreds);
+        //   valueAdder("C", "D", "M", hundreds);
+        // }
+        // if (tens > 0) {
+        //   console.log("tens", tens);
+        //   valueAdder("X", "L", "C", tens);
+        // }
+
+        // romanStr.push(romanNums[roman % 10]);
+        // return romanStr.join("");
       }
 
-      translatePigLatin("algorithm");
+      console.log(convertToRoman(1000));
     </script>
   </body>
 </html>

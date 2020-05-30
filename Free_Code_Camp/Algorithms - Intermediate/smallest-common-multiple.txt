@@ -1,0 +1,37 @@
+function smallestCommons(arr) {
+  let sortedArray = [...arr];
+  sortedArray.sort((a, b) => a - b);
+  let scmArray = [];
+  for (let i = sortedArray[0]; i <= sortedArray[1]; i++) {
+    scmArray.push(i);
+    }
+  let dividend;
+  let divisor;
+  let remainder;
+  let scmOrginial;
+  let scm;
+  scmArray.reduce((prev, curr) => {
+    if (scm) {
+      prev = scm;
+    }
+    scmOrginial = prev * curr;
+    scm = scmOrginial / divisor;
+    if (prev > curr) {
+      dividend = prev;
+      divisor = curr;
+    } else {
+      dividend = curr;
+      divisor = prev;
+    }
+    remainder = dividend % divisor;
+    while (remainder) {
+      dividend = divisor;
+      divisor = remainder;
+      remainder = dividend % divisor;
+    }
+    scm = scmOrginial / divisor;
+  });
+  return scm
+  }
+
+smallestCommons([1,5]);

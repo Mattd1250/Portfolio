@@ -1,0 +1,23 @@
+function sumPrimes(num) {
+  let primeSum = [2];
+  if (num === 1 || num === 0) {
+    return (primeSum = [0]);
+  } else if (num === 2) {
+    primeSum = 2;
+  } else if (num > 2) {
+    for (let newNumber = 3; newNumber <= num; newNumber++) {
+      let isPrime = true;
+      for (let divider = 2; divider < newNumber; divider++) {
+        if (newNumber % divider === 0) {
+          isPrime = false;
+        }
+      }
+      if (isPrime === true) {
+        primeSum.push(newNumber);
+      }
+    }
+  }
+  return primeSum.reduce((acc, curr) => acc + curr);
+}
+
+sumPrimes(10);

@@ -1,0 +1,19 @@
+function fearNotLetter(str) {
+        let missingNumber;
+        let currentLettersToNum = [...str];
+        currentLettersToNum = currentLettersToNum.map(
+          (letter) => (letter = letter.charCodeAt(0))
+        );
+        let startNum = str.charCodeAt(0);
+        let endNum = str.charCodeAt(str.length - 1);
+        let filterLetters = [];
+        for (let i = startNum; i <= endNum; i++) {
+          filterLetters.push(i);
+        }
+        filterLetters = filterLetters
+          .filter((num) => !currentLettersToNum.includes(num))
+          .map((letter) => String.fromCharCode(letter));
+        filterLetters ? (missingNumber = filterLetters[0]) : missingNumber;
+        return missingNumber;
+      }
+fearNotLetter("abce");

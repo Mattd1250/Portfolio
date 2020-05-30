@@ -1,0 +1,23 @@
+function pairElement(str) {
+  let matchedArray = [...str];
+  matchedArray.map((letter, index) => {
+    switch (letter) {
+      case "G":
+        return (matchedArray[index] = ["G", "C"]);
+ 
+      case "C":
+        return (matchedArray[index] = ["C", "G"]);
+ 
+      case "A":
+        return (matchedArray[index] = ["A", "T"]);
+ 
+      case "T":
+        return (matchedArray[index] = ["T", "A"]);
+  
+      default:
+        break;
+          }
+        });
+        return matchedArray;
+      }
+pairElement("GCG");

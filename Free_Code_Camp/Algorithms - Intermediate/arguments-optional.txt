@@ -1,0 +1,25 @@
+ function addTogether(...numbers) {
+        let num = [...numbers];
+
+        // TWO Args that are numbers
+        if (Number.isInteger(num[0] && num[1])) {
+
+          return num[0] + num[1];
+        }
+        // ONE or TWO numbers that 1 of them is not a Number
+        else if (
+          !Number.isInteger(num[0]) ||
+          (!Number.isInteger(num[1]) && num.length === 2)
+        ) {
+          return undefined;
+        }
+        // Only ONE number
+        else {
+          return (secondNum) => {
+            if (Number.isInteger(secondNum)) {
+              return num[0] + secondNum;
+            }
+          };
+        }
+      }
+addTogether(2,3);

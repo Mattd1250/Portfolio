@@ -1,0 +1,8 @@
+function uniteUnique(arr, ...array) {
+  const newArray = [...arr];
+  const arrayGroup = [...array];
+  arrayGroup.map((array) => array.map((num) => !newArray.includes(num) && newArray.push(num)));
+return newArray;
+};
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);

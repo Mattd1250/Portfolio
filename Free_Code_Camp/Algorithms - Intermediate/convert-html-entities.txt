@@ -1,0 +1,14 @@
+function convertHTML(str) {
+ const convertTo = {
+  "&": "&amp;",
+  '"': "&quot;",
+  "'": "&apos;",
+  "<": "&lt;",
+  ">": "&gt;",
+};
+const regex = /[&<>"']/g;
+let string = str;
+return string.replace(regex, (match) => convertTo[match]);
+}
+
+convertHTML("Dolce & Gabbana");

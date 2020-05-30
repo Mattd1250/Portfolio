@@ -1,0 +1,12 @@
+function dropElements(arr, func) {
+  let workingArr = [...arr];
+  let bool = false;
+  workingArr = workingArr.filter((num) => {
+    if (func(num) || bool === true) {
+      return (bool = true);
+    }
+  });
+  return workingArr
+}
+
+dropElements([1, 2, 3], function(n) {return n < 3; });

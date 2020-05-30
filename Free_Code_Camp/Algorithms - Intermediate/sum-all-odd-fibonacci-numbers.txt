@@ -1,0 +1,17 @@
+function sumFibs(num) {
+  let fibNumbers = [0, 1];
+  let newNumber = 0;
+  for (let i = 0; i <= num; i = newNumber) {
+    let fibLength = fibNumbers.length - 1;
+    newNumber = fibNumbers[fibLength] + fibNumbers[fibLength - 1];
+    
+    if (newNumber <= num) {
+      fibNumbers.push(newNumber);
+    }
+  }
+  return fibNumbers
+    .filter((num) => num % 2 === 1)
+    .reduce((acc, curr) => acc + curr);
+}
+
+sumFibs(4);

@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function smallestCommons(arr) {
+        let firstArray = [...arr];
+        firstArray.sort((a, b) => a - b);
+        let scmArray = [];
+        for (let i = firstArray[0]; i <= firstArray[1]; i++) {
+          scmArray.push(i);
+        }
+        console.log(scmArray);
+        let dividend;
+        let divisor;
+        let remainder;
+        let scmOrginial;
+        let scm;
+        scmArray.reduce((prev, curr, index) => {
+          console.log(
+            "%c---- Beginning of Reduce ------",
+            "background-color: green; color: white"
+          );
+          console.log("prev", prev);
+          console.log("curr", curr);
+
+          console.log("scm", scm);
+          if (scm) {
+            prev = scm;
+          }
+          scmOrginial = prev * curr;
+          console.log("scmOrginial", scmOrginial);
+          scm = scmOrginial / divisor;
+          console.log("prev", prev);
+          console.log("index", index);
+          if (prev > curr) {
+            dividend = prev;
+            divisor = curr;
+          } else {
+            dividend = curr;
+            divisor = prev;
+          }
+
+          console.log("dividend", dividend);
+          console.log("divisor", divisor);
+          remainder = dividend % divisor;
+
+          console.log("remainder", remainder);
+          while (remainder) {
+            console.log(
+              "%c---- Beginning of Loop ------",
+              "background-color: green; color: white"
+            );
+            dividend = divisor;
+            divisor = remainder;
+            remainder = dividend % divisor;
+            console.log("dividend", dividend);
+            console.log("divisor", divisor);
+            console.log("remainder", remainder);
+            console.log(
+              "%c---- End of loop ------",
+              "background-color: red; color: white"
+            );
+          }
+          scm = scmOrginial / divisor;
+          console.log(
+            "%c---- End of Reduce ------",
+            "background-color: red; color: white"
+          );
+          console.log("Smallest Common Multiple: ", scm);
+          console.log(
+            "%c---- End of Reduce loop ------",
+            "background-color: red; color: white"
+          );
+          console.log(
+            "%c---- End of Else ------",
+            "background-color: red; color: white"
+          );
+        });
+      }
+
+      smallestCommons([1, 13]);
+    </script>
+  </body>
+</html>

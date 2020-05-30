@@ -1,0 +1,15 @@
+function palindrome(str) {
+  let strArray = str.toLowerCase().match(/([a-z]|[0-9])/gi);
+  let arrLength = strArray.length;
+  let arrHalfLength = Math.floor(strArray.length / 2);
+  let isPala = true;
+
+   for (let i = 0; i <= arrHalfLength; i++) {
+          
+   if (isPala === false || strArray[i] !== strArray[arrLength - 1 - i])
+            isPala = false;
+        }
+
+        return isPala;
+      }
+palindrome("eye");

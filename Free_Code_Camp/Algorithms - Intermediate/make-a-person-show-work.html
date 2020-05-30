@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var Person = function (firstAndLast) {
+        // Complete the method below and implement the others similarly
+        let name = firstAndLast.split(" ");
+
+        //Object of Gets and Sets
+        // GETs
+        this.getFirstName = function () {
+          return name[0];
+        };
+        this.getLastName = function () {
+          return name[1];
+        };
+        this.getFullName = function () {
+          return name.join(" ");
+        };
+
+        // SETs
+        this.setFirstName = function (first) {
+          name[0] = first;
+        };
+        this.setLastName = function (last) {
+          name[1] = last;
+        };
+        this.setFullName = function (firstAndLast) {
+          name = firstAndLast.split(" ");
+        };
+      };
+
+      var bob = new Person("Bob Ross");
+      console.log("Object.keys(bob).length: ", Object.keys(bob).length);
+      console.log("Object.keys(bob): ", Object.keys(bob));
+      console.log("bob.getFirstName() Pre-Set:", bob.getFirstName());
+      console.log("bob.getLastName() Pre-Set:", bob.getLastName());
+      console.log("bob.getFullName() Pre-Set:", bob.getFullName());
+      bob.setFirstName("Everly");
+      bob.setLastName("DiPaolo");
+      bob.setFullName("Everly DiPaolo");
+      console.log("bob.getFirstName() Post-Set:", bob.getFirstName());
+      console.log("bob.getLastName() Post-Set:", bob.getLastName());
+      console.log("bob.getFullName() Post-Set:", bob.getFullName());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function addTogether(...numbers) {
+        let num = [...numbers];
+
+        // TWO Args that are numbers
+        if (Number.isInteger(num[0] && num[1])) {
+          console.log("Both are Numbers");
+          return num[0] + num[1];
+        }
+        // ONE or TWO numbers that 1 of them is not a Number
+        else if (
+          !Number.isInteger(num[0]) ||
+          (!Number.isInteger(num[1]) && num.length === 2)
+        ) {
+          return undefined;
+        }
+        // Only ONE number
+        else {
+          return (secondNum) => {
+            if (Number.isInteger(secondNum)) {
+              return num[0] + secondNum;
+            }
+          };
+        }
+      }
+
+      console.log(
+        "%caddTogether(2, 3) = 5",
+        "background-color: green; color: white;",
+        addTogether(2, 3)
+      );
+      console.log(
+        "%caddTogether(2)(3) = 5",
+        "background-color: green; color: white;",
+        addTogether(2)(3)
+      );
+      console.log(
+        "%caddTogether(http://bit.ly/IqT6zt) = undefined",
+        "background-color: green; color: white;",
+        addTogether('http://bit.ly/IqT6zt"')
+      );
+      console.log(
+        "%caddTogether(2, '3') = undefined",
+        "background-color: green; color: white;",
+        addTogether(2, "3")
+      );
+      console.log(
+        "%caddTogether(2)([3]) = undefined",
+        "background-color: green; color: white;",
+        addTogether(2)([3])
+      );
+    </script>
+  </body>
+</html>
