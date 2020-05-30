@@ -21,46 +21,67 @@
           4: "M",
         };
 
-        const divider = {
-          1: 1,
-          2: 10,
-          3: 100,
-          4: 1000,
+        let romanNum = num.toString().split("");
+        console.log("romanNum", romanNum);
+
+        let numLength = romanNum.length;
+        console.log("numLength", numLength);
+
+        const singleNums = (workingNum, index) => {
+          let letter = nums[index];
+          let groupOfLetters = "";
+          for (let i = 0; i < workingNum; i++) {
+            groupOfLetters += letter;
+            console.log("groupOfLetters", groupOfLetters);
+          }
+          return groupOfLetters;
         };
-        console.log(divider);
-        let romanNum = [];
 
-        const convertToRoman = (val) => {
-          let times;
-          let numLength = val.toString().length;
-          let quotionent = val / divider[numLength];
-          console.log("numLength", numLength);
-          console.log("divider[numLength]", divider[numLength]);
-          console.log("val / divider[numLength]", val / divider[numLength]);
-          if (quotionent > 0) {
-            console.log("quotionent", quotionent);
+        convertToRomans = (romNum) => {
+          console.log("romNum entering convertToRomans", romNum);
+          console.log("index", index);
+          let workingNum = Number(romNum.shift());
+
+          console.log("romNum", romNum);
+          console.log("workingNum", workingNum);
+          console.log("romanNum after shift", romanNum);
+          if (index > 0) {
+            console.log("%cStart of If", "background-color: green;");
+            switch (workingNum) {
+              case 1:
+              case 2:
+              case 3:
+                workingNum = singleNums(workingNum, index);
+                romanNum[index] = workingNum;
+                break;
+              case 4:
+                romanNum[index] = nums[numLength + 40];
+                break;
+              case 5:
+                romanNum[index] = nums[numLength + 50];
+                break;
+              case 9:
+                romanNum[index] = nums[numLength] + nums[numLength + 1];
+                break;
+              default:
+                workingNum -= 5;
+                workingNum = singleNums(workingNum, index);
+                romanNum[index] = nums[numLength + 50] + workingNum;
+                break;
+                console.log("%cEnd of Switch", "background-color: red;");
+            }
+            console.log("%cEnd of If", "background-color: red;");
           }
-          switch (quotionent) {
-            case 1:
-            case 2:
-            case 3:
-              return romanNum.push(quotionent);
-
-            case 4:
-              return romanNum.push(nums[numLength + 40]);
-
-            case 5:
-              return romanNum.push(nums[numLength + 50]);
-
-            default:
-              quotionent -= 5;
-              return romanNum.push(nums[numLength + 50] + quotionent);
+          console.log("romNum.length at end of convert", romNum.length);
+          if (romNum.length > 0) {
+            convertToRomans(romNum, index - 1);
           }
+
           console.log("romanNum", romanNum);
-          return romanNum;
+          return romNum;
         };
 
-        convertToRoman(num);
+        convertToRomans(romanNum, numLength);
 
         return romanNum;
         // 1: "I",
@@ -126,7 +147,7 @@
         // return Str.join("");
       }
 
-      console.log(convertTo(55));
+      console.log(convertTo(487));
     </script>
   </body>
 </html>

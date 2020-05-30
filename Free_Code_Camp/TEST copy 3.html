@@ -1,0 +1,168 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function convertTo(num) {
+        const nums = {
+          1: "I",
+          41: "IV",
+          51: "V",
+          2: "X",
+          42: "XL",
+          52: "L",
+          3: "C",
+          43: "CD",
+          53: "D",
+          4: "M",
+        };
+
+        const singleNums = (workingNum, index) => {
+          console.log("index", index);
+          let letter = nums[index + 1];
+          console.log("letter", letter);
+          let groupOfLetters = "";
+          if (workingNum > 5) {
+            workingNum -= 5;
+          }
+          for (let i = 0; i < workingNum; i++) {
+            groupOfLetters += letter;
+            console.log("groupOfLetters", groupOfLetters);
+          }
+          return groupOfLetters;
+        };
+
+        let romanNum = num
+          .toString()
+          .split("")
+          .map((num) => parseInt(num));
+        console.log("romanNum", romanNum);
+
+        let letterGroup = [...romanNum];
+        console.log("letterGroup", letterGroup);
+        let numChars = romanNum.length;
+        console.log("numChars", numChars);
+
+        let i = 0;
+
+        const convertToRomans = (letterGroup, i) => {
+          console.log("romanNum[i]", typeof romanNum[i]);
+          console.log("%cStart of If", "background-color: green;");
+          let letters = "";
+          if (romanNum[i] <= 3) {
+            letterGroup[i] = singleNums(romanNum[i], i);
+
+            console.log("letterGroup", letterGroup);
+            console.log("ran <=3");
+            letterGroup[i] = letters;
+          } else if (romanNum[i] === 4) {
+            console.log("ran 4");
+            romanNum.push(nums[numChars + 40]);
+          } else if (romanNum[i] === 5) {
+            console.log("ran 5");
+            romanNum.push(nums[numChars + 50]);
+          } else if (romanNum[i] === 9) {
+            console.log("ran 9");
+            romanNum.push(nums[numChars + 50] + letters);
+          } else {
+            letterGroup[i] = singleNums(romanNum[i], i);
+            console.log("ran default");
+            romanNum.push(nums[numChars] + nums[numChars + 1]);
+          }
+          console.log("end of if");
+          return letterGroup;
+        };
+
+        convertToRomans(letterGroup, i);
+
+        // convertToRomans = (romNum) => {
+        //   let index = romNum.length;
+        //   console.log("index", index);
+        //   let workingNum = Number(romNum.shift());
+        //   console.log("workingNum", workingNum);
+        //   console.log("romanNum after shift", romanNum);
+
+        //
+        //   console.log("%cEnd of Switch", "background-color: red;");
+
+        //   console.log("romanNum.length at end of convert", romanNum.length);
+        //   if (romanNum.length > 0) {
+        //     convertToRomans(romanNum);
+        //   }
+        //   return romanNum;
+        // };
+
+        // convertToRomans(romanNum);
+
+        // return romanNum;
+
+        // 1: "I",
+        // 2: "II",
+        // 3: "III",
+        // 4: "IV",
+        // 5: "V",
+        // 6: "VI",
+        // 7: "VII",
+        // 8: "VIII",
+        // 9: "IX",
+        // 10: "X",
+        // 50: "L",
+        // 100: "C",
+        // 500: "D",
+        // 1000: "M",
+        // };
+        // const valueAdder = {}
+
+        // const valueAdder = (letter, nextLetter, followingLetter, times) => {
+        //   console.log("letter", letter);
+        //   console.log("nextLetter", nextLetter);
+        //   console.log("followingLetter", followingLetter);
+        //   console.log("times", times);
+        //   if (times === 9) {
+        //     return Str.push(`${letter}${followingLetter}`);
+        //   } else if (times > 5 && times <= 8) {
+        //     console.log("%cValueAdder Starts", "background-color: yellow;");
+        //     Str.push(nextLetter);
+        //     console.log("Str", Str);
+        //     times -= 5;
+        //   }
+        //   for (let i = 0; i < times; i++) {
+        //     Str.push(letter);
+        //   }
+        // };
+
+        // let  = num.toString().split("");
+        // console.log();
+        // let Len = Len.length;
+        // let Str = [];
+        // let ones = [0];
+        // let tens = [1];
+        // let hundreds = [2];
+        // let thousands = [3];
+        // // let tens = Math.floor( / 10);
+        // // let hundreds = Math.floor( / 100);
+        // // let thousands = Math.floor( / 1000);
+        // if (thousands > 0) {
+        //   console.log("thousands", thousands);
+        //   valueAdder("M", "L", "C", thousands);
+        // }
+        // if (hundreds > 0) {
+        //   console.log("hundreds", hundreds);
+        //   valueAdder("C", "D", "M", hundreds);
+        // }
+        // if (tens > 0) {
+        //   console.log("tens", tens);
+        //   valueAdder("X", "L", "C", tens);
+        // }
+
+        // Str.push(Nums[ % 10]);
+        // return Str.join("");
+      }
+      console.log(convertTo(321));
+    </script>
+  </body>
+</html>
