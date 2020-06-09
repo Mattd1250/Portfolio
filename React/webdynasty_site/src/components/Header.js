@@ -7,11 +7,6 @@ export default function Header() {
     <div className="header">
       <img src={logo} alt="Web dynasty Logo" />
       <Navbar hidden="" listType="inline" />
-      {/* <ul className="navbar">
-        <li>Features</li>
-        <li>What is SEO</li>
-        <li>Price</li>
-        <li>Contact</li>*/}
     </div>
   );
 }

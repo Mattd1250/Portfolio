@@ -1,0 +1,93 @@
+* {
+  color: orange;
+}
+
+.App {
+  background: orange;
+  display: grid;
+  height: 100vh;
+}
+
+#quote-box {
+  width: 500px;
+  justify-self: center;
+  align-self: center;
+}
+
+#quote-box,
+#text,
+#author {
+  display: grid;
+  background: #fff;
+  padding: 20px;
+  margin: 0;
+}
+
+#quote-box {
+  justify-items: center;
+}
+
+.inline {
+  display: block;
+}
+
+.quoteMark {
+  float: left;
+}
+
+#text {
+  float: left;
+  font-size: 2rem;
+  padding: 0 0 0 10px;
+}
+
+#author {
+  text-align: right;
+  padding-right: 0px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 500px;
+}
+
+#new-quote {
+  text-align: center;
+  width: 100px;
+}
+
+#tweet-quote {
+  float: right;
+  width: 100px;
+}
+
+a#tweet-quote {
+  text-decoration: none;
+  align-content: center;
+}
+
+.twitter {
+  display: block;
+}
+
+button {
+  background: #fff;
+  border: 2px solid #fff;
+  width: 120px;
+}
+
+#new-quote:hover {
+  background: orange;
+  color: #fff;
+}
+
+#kiwi {
+  font-size: 24px;
+  padding: 5px;
+  border: 2px solid orange;
+}
+
+#kivi:hover {
+  color: white;
+}

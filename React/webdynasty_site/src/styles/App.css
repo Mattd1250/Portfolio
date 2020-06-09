@@ -71,7 +71,6 @@ ul.stacked {
 .section {
   content: "";
   padding-top: 40px;
-  /* margin-top: 40px; */
 }
 
 .primaryBtn {
@@ -125,7 +124,6 @@ ul.stacked {
 }
 
 /* Header */
-
 .header {
   display: grid;
   width: 100%;
@@ -133,7 +131,18 @@ ul.stacked {
   grid-template-columns: 1fr 2fr;
   border-bottom: 2px solid black;
   position: fixed;
+  top: 0;
   background: #fff;
+}
+
+@supports (position: sticky) {
+  .header {
+    position: sticky;
+  }
+
+  body {
+    margin-top: -100px;
+  }
 }
 
 .header img {
@@ -250,7 +259,12 @@ div.hero a {
 .pricingPlans {
   background: #1f1f1f;
   color: #fff;
-  padding-top: 40px;
+  padding-top: 70px;
+  margin-top: -30px;
+}
+
+#pricingPlans .headingTitle {
+  margin-bottom: 0px;
 }
 
 .priceBox {
@@ -301,8 +315,14 @@ li.notOffered {
   background-color: #fe3100;
   color: #fff;
   width: 100%;
-  padding-top: 40px;
   padding-bottom: 80px;
+  margin-top: 40px;
+}
+
+.contact .section {
+  content: "";
+  padding-top: 80px;
+  margin-top: -80px;
 }
 
 .contactContainer {

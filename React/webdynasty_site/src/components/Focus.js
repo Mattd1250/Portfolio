@@ -7,7 +7,7 @@ export default function Focus() {
       <div className="container">
         <h2 className="headingTitle">WebDynasty's Focus</h2>
         <div className="grid-2">
-          <img src={headshot} alt="Image of Matt DiPaolo" />
+          <img src={headshot} alt="Matt DiPaolo" />
           <div className="focusBlurb">
             <p>
               Hi, I am Matthew DiPaolo, owner of Web-Dynasty, and I help

@@ -3,7 +3,7 @@ import PriceBoxes from "./PriceBoxes";
 
 export default function PricingPlans() {
   return (
-    <div id="pricingPlans" className="pricingPlans">
+    <div id="pricingPlans" className="pricingPlans section">
       <h2 className="headingTitle">Pricing Plans</h2>
       <div className="container">
         <PriceBoxes />
