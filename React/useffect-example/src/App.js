@@ -1,17 +1,15 @@
 import React from "react";
-import "./App.css";
 import ResourceType from "./ResourceType";
-import WindowWidth from "./WindowWidth";
 import ResourceTypeCleanUp from "./ResourceTypeCleanUp";
+import WindowWidth from "./WindowWidth";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <ResourceTypeCleanUp />
       <WindowWidth />
       <ResourceType />
     </div>
   );
 }
-
 export default App;

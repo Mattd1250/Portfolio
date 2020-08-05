@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-    <div>The converted number is: </div>
-    <p id="root"></p>
-    <footer>
-      <script>
-       function convertTo(num) {
+function convertToRoman(num) {
+ function romanNumerialCreator(number, base){
         
-        function romanNumerialCreator(number, base){
-        
-          function addSingles(numberOfOnesNeeded, base){
+  function addSingles(numberOfOnesNeeded, base){
             let singleOnes = "";
             for (let i = 0; i < numberOfOnesNeeded; i++) {
               singleOnes += nums[base]
@@ -72,8 +58,6 @@
           52: "D",
           3: "M",
         };
-
-      // take current number and create an array
       let romanNumerial = ""
       let postionOfWorkingNumberFromRightToLeft = 0;
       let toBeConvert = String(num).split('')
@@ -85,21 +69,7 @@
         postionOfWorkingNumberFromRightToLeft += 1;
       }
       
-      // return romanNumerial;
+      return romanNumerial;
+}
 
-      return ` 
-      starting Number = ${num};<br>
-      toBeConverted = ${toBeConvert};<br>
-      romanNumerial ${romanNumerial};<br>
-      `
-      
-      
-
-      }
-
-let el = document.getElementById("root")
-      el.innerHTML = convertTo(2) 
-      </script>
-    </footer>
-  </body>
-</html>
+convertToRoman(36);

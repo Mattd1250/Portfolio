@@ -1,0 +1,25 @@
+function telephoneCheck(str) {
+  let phoneNumber = str
+  let phoneCheckerArray = [
+    /^\s*\d{3}\-\d{3}\-\d{4}/, // 555-555-5555
+    /^\s*\(\d{3}\)\d{3}\-\d{4}/, // (555)555-5555
+    /^\s*\(\d{3}\)\s\d{3}\-\d{4}/, // (555) 555-5555
+    /^\s*\d{3}\s\d{3}\s\d{4}/, // 555 555 5555
+    /^\s*\d{10}$/, // 5555555555
+      ]
+
+        let isValidPhoneNumber = false
+
+
+        if(phoneNumber.charAt(0) === "1"){
+          phoneNumber = phoneNumber.substring(1);
+        }
+
+        phoneCheckerArray.forEach(phonePattern => {
+          if(phoneNumber.match(phonePattern)) isValidPhoneNumber = true
+        })
+
+        return isValidPhoneNumber === true ? true : false; 
+      }
+
+telephoneCheck("555-555-5555");

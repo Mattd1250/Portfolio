@@ -1,0 +1,18 @@
+function rot13(str) {
+
+  let newCode = [...str]
+  let decifered = []
+  decifered = newCode.map(letter => {
+   let charNumber;
+   if (letter.charCodeAt() < 65 || 
+   letter.charCodeAt() > 91) 
+   return letter; 
+    letter.charCodeAt() < 78 ? 
+    charNumber = letter.charCodeAt() + 13: 
+    charNumber = letter.charCodeAt() - 13;
+    return String.fromCharCode(charNumber)
+        })
+   return decifered.join('')
+}
+
+rot13("SERR PBQR PNZC");

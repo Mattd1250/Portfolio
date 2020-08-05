@@ -45,7 +45,8 @@
           console.log("romNum", romNum);
           console.log("workingNum", workingNum);
           console.log("romanNum after shift", romanNum);
-          if (index > 0) {
+          if (index <= 0 ) return
+          if (index > 0 ) {
             console.log("%cStart of If", "background-color: green;");
             switch (workingNum) {
               case 1:
