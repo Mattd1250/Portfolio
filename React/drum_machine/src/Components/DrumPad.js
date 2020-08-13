@@ -1,31 +1,34 @@
 import React from "react";
-import "../Styles/App.css";
+import "../Styles/DrumPad.css";
 
-function DrumPad({ drumpad, playSound, setCurrentKey }) {
-  function handleClick(e) {
-    const sound = e.target.firstChild;
-    console.log("e.targt", e.target.id);
-    console.log("sound", sound);
-    playSound(sound, drumpad);
+function DrumPad({ drumpad, playSound, changeKeyName}) {
+  function handleClick(e){
+    const newSound = e.target.firstChild
+    playSound(newSound)
+    const keyName = newSound.getAttribute("name")
+    changeKeyName(keyName)
   }
 
   function handleKeyPress(e) {
     if (drumpad.code === e.code) {
-      const sound = document.getElementById(e.code);
-      playSound(sound, drumpad);
+      const newSound = document.getElementsByClassName(e.code)[0]
+      playSound(newSound);
+      const keyName = newSound.getAttribute("name")
+      changeKeyName(keyName)
     }
   }
   document.addEventListener("keydown", handleKeyPress);
 
   return (
-    <li id={drumpad.letter} className="drum-pad">
-      <button id={drumpad.name} className={drumpad.name} onClick={handleClick}>
-        <audio id={drumpad.code} className={drumpad.name}>
-          <source src={drumpad.sound}></source>
+      <button
+      id={drumpad.name}
+      code={drumpad.code} 
+      className={ `${drumpad.name} drum-pad` } 
+      onClick={handleClick}>
+        <audio id={drumpad.letter} src={drumpad.sound} name={drumpad.name} className={`clip ${drumpad.code}` } >
         </audio>
         {drumpad.letter}
       </button>
-    </li>
   );
 }
 

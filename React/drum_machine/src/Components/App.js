@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import "../Styles/App.css";
 
 function App() {
-  const [currentKey, setCurrentKey] = useState("");
+  const [currentKey, setcurrentKey] = useState("")
   const drumpads = [
     {
       letter: "Q",
@@ -62,10 +62,13 @@ function App() {
     },
   ];
 
-  function playSound(sound, drumpad) {
+  function playSound(sound) {
+    sound.currentTime = 0
     sound.play();
-    setCurrentKey(drumpad.name);
-    console.trace();
+  }
+
+  function changeKeyName(name){
+    setcurrentKey(name)
   }
 
   return (
@@ -73,11 +76,18 @@ function App() {
       <div id="display">
         <div className="currentKey"> {currentKey}</div>
 
+        <div className="main-pad">
         {drumpads.map((drumpad) => {
           return (
-            <DrumPad key={uuidv4()} drumpad={drumpad} playSound={playSound} />
-          );
-        })}
+            <DrumPad 
+            key={uuidv4()} 
+            drumpad={drumpad} 
+            playSound={playSound} 
+            changeKeyName={changeKeyName}            
+            />
+            );
+          })}
+          </div>
       </div>
     </div>
   );
