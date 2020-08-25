@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function Display(display){ 
-    return (
-        <div id='display'>
-            <h2>{display.display}</h2>    
-        </div>
-    )
+export default function Display({ props, name, divId }) {
+  return (
+    <>
+      <label>
+        <input id={name} value={props} type="text" />
+      </label>
+    </>
+  );
 }

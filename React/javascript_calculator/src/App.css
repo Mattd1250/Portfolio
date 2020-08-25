@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+body {
+  margin: 80px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  display: grid;
+  height: 400px;
+  width: 350px;
+  border: 2px solid black;
+  background-color: #555;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  font-size: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 6fr;
 }
 
-.App-link {
-  color: #61dafb;
+.buttons {
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+  grid-template-columns: 1fr;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bottom-btns {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.numOps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.operations {
+  display: grid;
+}
+
+.operations button {
+  background-color: orange;
+}
+
+label {
+  background-color: #efefef;
+  grid-column: 1/4;
+}
+
+input {
+  width: 99%;
+  height: 99%;
+  margin-right: 25px;
+  text-align: right;
+  padding: 0px;
+  font-size: 36px;
+}
+
+#blank {
+  background-color: #555;
+}
+
+#clear {
+  background-color: #f10010;
+  color: #fff;
+}
+
+#equals {
+  background-color: #228b22;
+  color: #fff;
 }

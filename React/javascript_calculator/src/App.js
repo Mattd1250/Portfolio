@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Display from "./Display";
 import CalcButtons from "./CalcButtons";
+import DecimalButton from "./DecimalButton";
 
 function App() {
-  const [state, setState] = useState([]);
-  const [workingNumber, setWorkingNumber] = useState([0]);
+  const [input, setInput] = useState(0);
   const [display, setDisplay] = useState(0);
-  let newWorkingNumber = [];
+  const [operant, setOperant] = useState({ value: "", isNeg: false });
+  const [storedNumber, setStoredNumber] = useState(null);
   const numbers = [
-    {
-      id: "zero",
-      character: 0,
-    },
     {
       id: "one",
       character: 1,
@@ -49,6 +46,14 @@ function App() {
       id: "nine",
       character: 9,
     },
+    {
+      id: "blank",
+      character: "",
+    },
+    {
+      id: "zero",
+      character: 0,
+    },
   ];
 
   const operations = [
@@ -70,83 +75,118 @@ function App() {
     },
   ];
 
-  useEffect(() => {
-    setDisplay(workingNumber);
-  }, [workingNumber]);
-
-  function mathFunction(firstNum, currentOperation, secondNum) {
-    switch (currentOperation) {
-      case "+":
-        return firstNum + secondNum;
-
-      case "-":
-        return firstNum - secondNum;
-
-      case "*":
-        return firstNum * secondNum;
-
-      case "/":
-        return firstNum / secondNum;
-
-      default:
-        break;
-    }
-  }
-
   function handleClear() {
-    setState([]);
-    setWorkingNumber([0]);
+    setInput(0);
+    setDisplay(0);
+    setStoredNumber(0);
   }
 
-  function handleOperationClick(e) {
-    let firstNumber = workingNumber;
-    setState([firstNumber, e.target.value]);
-    setWorkingNumber([0]);
-    setDisplay(state[0]);
-    console.log(state);
+  function handleNumberClick(number) {
+    console.log(input.length);
+    if (input.length >= 16) return;
+    let newInput;
+    if (parseFloat(input) === 0 || input === null) {
+      newInput = number;
+    } else {
+      newInput = input + number;
+    }
+    let newDisplay = newInput;
+    if (operant.isNeg === true) newDisplay *= -1;
+    setInput(newInput);
+    setDisplay(newDisplay);
   }
 
-  function handleNumberClick(e) {
-    console.log("workingNumber", workingNumber);
-    workingNumber[0] === 0
-      ? (newWorkingNumber = [e.target.value])
-      : (newWorkingNumber = [...workingNumber, e.target.value].join(""));
-    setWorkingNumber(newWorkingNumber);
+  function handleOperationClick(operation) {
+    let negativeCheck = false;
+    let newOperation = operation;
+    if (operation === "-" && operant.value !== "") {
+      newOperation = operant.value;
+      negativeCheck = true;
+    }
+    let newStoredNumber;
+    if (parseFloat(storedNumber) === 0 || storedNumber === null) {
+      newStoredNumber = input;
+    } else {
+      newStoredNumber = storedNumber;
+    }
+    setInput(0);
+    setOperant({ value: newOperation, isNeg: negativeCheck });
+    setStoredNumber(newStoredNumber);
   }
 
   function handleEquals() {
-    console.log("operation", state[1]);
-    const firstNum = Number(state[0]);
-    const currentOperation = state[1];
-    const secondNum = Number(workingNumber);
-    setWorkingNumber(mathFunction(firstNum, currentOperation, secondNum));
+    if (input === ".") return;
+    let newNum;
+    const storedNum = Number(storedNumber);
+    let inputNum = Number(input);
+    if (operant.isNeg) inputNum *= -1;
+    switch (operant.value) {
+      case "+":
+        newNum = storedNum + inputNum;
+        break;
+      case "-":
+        newNum = storedNum - inputNum;
+        break;
+      case "*":
+        newNum = storedNum * inputNum;
+        break;
+      case "/":
+        newNum = storedNum / inputNum;
+        break;
+
+      default:
+        return;
+    }
+    if (newNum > 9999999999999999) {
+      newNum = "Too Large";
+    } else {
+      newNum = Math.round(newNum * 10000) / 10000;
+    }
+    setStoredNumber(newNum);
+    setInput(0);
+    setDisplay(newNum);
+    setOperant({ value: "", isNeg: false });
+    if (newNum === "Too Large") {
+      setTimeout(() => {
+        handleClear();
+      }, 3000);
+    }
   }
 
   return (
     <>
-      <Display display={display} />
+      <div className="main">
+        <Display props={display} name="display" />
 
-      {numbers.map((number) => (
-        <CalcButtons button={number} handleOnClick={handleNumberClick} />
-      ))}
+        <div className="buttons">
+          <div className="top-btns">
+            <button id="clear" onClick={handleClear}>
+              AC
+            </button>
+            <button id="equals" onClick={handleEquals}>
+              =
+            </button>
+          </div>
 
-      {operations.map((operation) => (
-        <CalcButtons button={operation} handleOnClick={handleOperationClick} />
-      ))}
+          <div className="bottom-btns">
+            <div className="numbers">
+              {numbers.map((number) => (
+                <CalcButtons props={number} handleOnClick={handleNumberClick} />
+              ))}
+              <DecimalButton input={input} handleOnClick={handleNumberClick} />
+            </div>
 
-      <button id="decimal">.</button>
-
-      <button id="clear" onClick={handleClear}>
-        AC
-      </button>
-
-      <button id="equals" onClick={handleEquals}>
-        =
-      </button>
-
-      {console.log("state", state)}
-      {console.log("workingNumber", workingNumber)}
-      {console.log("display", display)}
+            <div className="operations">
+              {operations.map((operation) => (
+                <CalcButtons
+                  props={operation}
+                  handleOnClick={handleOperationClick}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

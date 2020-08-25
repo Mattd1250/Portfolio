@@ -1,14 +1,20 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
-export default function CalcButtons({ button, handleOnClick }) {
+export default function CalcButtons({ props, handleOnClick }) {
+  function numberClicked(number) {
+    const value = number.target.value;
+    handleOnClick(value);
+  }
+
   return (
     <button
-      id={button.id}
-      key={button.id}
-      value={button.character}
-      onClick={handleOnClick}
+      id={props.id}
+      key={uuidv4()}
+      value={props.character}
+      onClick={numberClicked}
     >
-      {button.character}
+      {props.character}
     </button>
   );
 }
